@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
     <div class="main-content-inner">
                             <div class="main-content-wrap">
@@ -28,6 +28,7 @@
                                 </div>
                                 <div class="wg-box">
                                     <form class="form-new-product form-style-1" method="POST" action="{{ route('admin.coupon.store') }}">
+                                        @csrf
                                         <fieldset class="name">
                                             <div class="body-title">Coupon Code <span class="tf-color-1">*</span></div>
                                             <input class="flex-grow" type="text" placeholder="Coupon Code" name="code" tabindex="0" value="{{ old('code') }}" aria-required="true" required="">
