@@ -143,7 +143,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route('admin.coupons') }}" class="">
+                                    <a href="coupons.html" class="">
                                         <div class="icon"><i class="icon-grid"></i></div>
                                         <div class="text">Coupons</div>
                                     </a>
