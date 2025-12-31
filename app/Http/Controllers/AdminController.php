@@ -7,11 +7,15 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Carbon\Carbon;  
 use App\Models\Coupon;
+use App\Models\Order;
 use Intervention\Image\Laravel\Facades\Image;
-
+use App\Models\Slide;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\OrderItem;
+use App\Models\Transaction;
+
 
 class AdminController extends Controller
 {
@@ -506,4 +510,21 @@ class AdminController extends Controller
 
         return redirect()->route('admin.coupons')->with('status', 'Coupon deleted successfully!');
     }
+
+    public function orders()
+    {
+        $orders = Order::orderBy('created_at', 'DESC')->paginate(12);
+        return view('admin.orders', compact('orders'));
+    }
+
+    public function order_details($order_id)
+    {
+        $order = Order::find($order_id);
+        $orderItems = OrderItem::where('order_id', $order_id)->orderBy('id')->paginate(12);
+        $transaction = Transaction::where('order_id', $order_id)->first();
+        return view('admin.order-details', compact('order', 'orderItems', 'transaction'));
+    }
+
+    
+
 }

@@ -19,7 +19,12 @@ Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add
 Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
 Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
 Route::delete('/cart/remove/{rowId}', [CartController::class, 'remove_item'])->name('cart.item.remove');
-Route::delete('/cart/clear}', [CartController::class, 'empty_cart'])->name('cart.empty');
+Route::delete('/cart/clear', [CartController::class, 'empty_cart'])->name('cart.empty');
+
+
+Route::post('/cart/apply-coupon',[CartController::class,'apply_coupon_code'])->name('cart.coupon.apply');
+Route::delete('/cart/remove-coupon', [CartController::class,'remove_coupon_code'])->name('cart.coupon.remove');
+
 
 Route::post('/wishlist/add', [WishlistController::class, 'add_to_wishlist'])->name('wishlist.add');
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
@@ -27,9 +32,16 @@ Route::delete('/wishlist/remove/{rowId}', [WishlistController::class, 'remove_it
 Route::delete('/wishlist/clear', [WishlistController::class, 'empty_wishlist'])->name('wishlist.items.clear');
 Route::post('/wishlist/move-to-cart/{rowId}', [WishlistController::class, 'move_to_cart'])->name('wishlist.move.to.cart');
 
+Route::get('/checkout',[CartController::class,'checkout'])->name('cart.checkout');
+Route::post('/place-order',[CartController::class,'place_order'])->name('cart.place.order');
+Route::get('/order-confirmation',[CartController::class,'confirmation'])->name('cart.confirmation');
+
+Route::get('/search', [HomeController::class, 'search'])->name('home.search');
+
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index');
+    Route::get('account-orders', [UserController::class, 'orders'])->name('user.orders');
 });
 
 Route::middleware(['auth', AuthAdmin::class])->group(function(){
@@ -61,4 +73,9 @@ Route::middleware(['auth', AuthAdmin::class])->group(function(){
     Route::get('/admin/coupon/{id}/edit', [AdminController::class, 'coupon_edit'])->name('admin.coupon.edit');
     Route::put('/admin/coupon/update', [AdminController::class, 'coupon_update'])->name('admin.coupon.update');
     Route::delete('/admin/coupon/{id}/delete', [AdminController::class, 'coupon_delete'])->name('admin.coupon.delete');
-});
+
+    Route::get('/admin/orders', [AdminController::class, 'orders'])->name('admin.orders');
+    Route::get('admin/order/{order_id}/details', [AdminController::class, 'order_details'])->name('admin.order.details');
+
+    Route::get('/admin/slides', [AdminController::class,'slides'])->name('admin.slides');
+}); 
