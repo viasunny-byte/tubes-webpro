@@ -1883,8 +1883,7 @@
         "/user": {
             "get": {
                 "operationId": "user.profile",
-                "description": "Mengambil data user yang sedang login.",
-                "summary": "Get Authenticated User",
+                "summary": "Get Authenticated User\r\n\r\nMengambil data user yang sedang login",
                 "tags": [
                     "User"
                 ],
