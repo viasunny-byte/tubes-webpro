@@ -1,3 +1,46 @@
+## Cara Menggunakan Aplikasi
+### A. Panduan untuk Pelanggan
+
+1. Akses Aplikasi
+2. Registrasi Akun
+Klik menu Register.
+Isi data yang diperlukan.
+Setelah berhasil, akun siap digunakan.
+3. Jika sudah membuat akun sebelumnya, bisa langsung Login saja.
+Masuk menggunakan email dan password yang telah didaftarkan.
+4. Melihat Produk (Shop)
+Buka laman Shop.
+Pelanggan dapat melihat-lihat produk tanpa harus login.
+5. Memilih Produk
+Pilih baju yang diinginkan.
+Produk dapat ditambahkan ke Wishlist atau Keranjang.
+6. Keranjang Belanja
+Buka halaman Cart/Keranjang.
+Pastikan produk dan jumlah sudah sesuai.
+7. Checkout
+Klik tombol Proceed to Checkout.
+Masukkan data diri (alamat, kontak, dan informasi lainnya).
+Klik Checkout untuk menyelesaikan transaksi.
+
+⚠️ Catatan:
+Pelanggan boleh melihat produk tanpa login, namun untuk melakukan checkout wajib login terlebih dahulu.
+
+### B. Panduan Akses Dashboard Admin
+
+1. Login Admin
+Email: adminyuhu@gmail.com
+Password: cihuymantap
+
+2. Masuk ke Dashboard Admin
+Setelah login, klik ikon profil.
+Pilih menu Dashboard Admin.
+
+- Fungsi Dashboard Admin:
+Mengelola produk
+Mengelola data pesanan
+Mengelola pengguna
+Monitoring aktivitas aplikasi
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
